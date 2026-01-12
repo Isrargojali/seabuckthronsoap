@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Leaf, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/sea-buckethorn-removebg-preview.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -58,23 +59,13 @@ const Navbar = () => {
           {/* Logo */}
           <a 
             href="#home" 
-            className="flex items-center gap-2.5 group"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('#home');
-            }}
+            className="flex items-center gap-3 group transform transition-transform duration-300 hover:scale-105 active:scale-95"
           >
-            <div className="w-10 h-10 md:w-11 md:h-11 rounded-xl bg-primary flex items-center justify-center shadow-soft group-hover:shadow-glow transition-shadow duration-300">
-              <Leaf className="w-5 h-5 md:w-6 md:h-6 text-primary-foreground" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif text-lg md:text-xl font-bold text-foreground tracking-tight leading-tight">
-                Seabuckthorn
-              </span>
-              <span className="text-[9px] md:text-[10px] text-muted-foreground tracking-widest uppercase leading-none">
-                Natural Soap Co.
-              </span>
-            </div>
+            <img
+              src={logo}
+              alt="Seabuckthorn Soap Logo"
+              className="h-12 w-auto object-contain"
+            />
           </a>
 
           {/* Desktop Navigation */}

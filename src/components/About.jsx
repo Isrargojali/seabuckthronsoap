@@ -4,9 +4,9 @@ import { Sparkles, Heart, Globe, Award, CheckCircle2 } from "lucide-react";
 import aboutImage from "@/assets/about-seabuckthorn.jpg";
 
 const stats = [
-  { value: "1000+", label: "Years of Tradition", icon: "🏛️" },
+  { value: "100+", label: "Years of Tradition", icon: "🏛️" },
   { value: "100%", label: "Organic Ingredients", icon: "🌿" },
-  { value: "50K+", label: "Happy Customers", icon: "💛" },
+  { value: "5K+", label: "Happy Customers", icon: "💛" },
   { value: "Zero", label: "Harmful Chemicals", icon: "✨" },
 ];
 
@@ -93,7 +93,7 @@ const About = () => {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-foreground">Certified Organic</p>
-                    <p className="text-xs text-muted-foreground">100% Natural</p>
+                    <p className="text-xs text-muted-foreground">99.9% Natural</p>
                   </div>
                 </div>
               </div>
@@ -128,7 +128,7 @@ const About = () => {
               <div className="flex items-center gap-3 p-3 bg-primary/5 rounded-lg border border-primary/10">
                 <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
                 <p className="text-sm text-foreground font-medium">
-                  Join <span className="text-primary">50,000+</span> customers who transformed their skincare
+                  Join <span className="text-primary">50,00+</span> customers who transformed their skincare
                 </p>
               </div>
             </div>

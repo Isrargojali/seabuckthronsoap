@@ -32,7 +32,7 @@ const Hero = () => {
             >
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-foreground">
-                100% Natural & Organic
+                99.99% Natural & Organic
               </span>
             </motion.div>
 
@@ -111,10 +111,10 @@ const Hero = () => {
                         className="w-3.5 h-3.5 fill-primary text-primary"
                       />
                     ))}
-                    <span className="ml-1.5 text-sm font-semibold text-foreground">5.0</span>
+                    <span className="ml-1.5 text-sm font-semibold text-foreground">4.5</span>
                   </div>
                   <p className="text-xs text-muted-foreground">
-                    <span className="font-medium text-foreground">10,000+</span> Happy Customers
+                    <span className="font-medium text-foreground">5000+</span> Happy Customers
                   </p>
                 </div>
               </div>
@@ -169,7 +169,7 @@ const Hero = () => {
               </div>
               
               {/* Bestseller badge */}
-              <motion.div 
+              {/* <motion.div 
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.6 }}
@@ -178,7 +178,7 @@ const Hero = () => {
                 <div className="bg-primary px-3 py-1.5 rounded-full shadow-soft">
                   <span className="text-xs font-semibold text-primary-foreground">⭐ Bestseller</span>
                 </div>
-              </motion.div>
+              </motion.div> */}
 
               {/* Price tag */}
               <motion.div
