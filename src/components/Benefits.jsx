@@ -5,9 +5,9 @@ import { Leaf, Droplets, Zap, Globe, Shield, Heart, Sun, Recycle, Award, Star } 
 const primaryBenefits = [
   { 
     icon: Leaf, 
-    title: '100% Organic', 
+    title: '99.9% Organic', 
     desc: 'Certified organic ingredients with no harmful chemicals or artificial fragrances.',
-    stat: '100%',
+    stat: '99.9%',
     statLabel: 'Natural'
   },
   { 
@@ -41,10 +41,10 @@ const trustBadges = [
 ];
 
 const scientificStats = [
-  { value: '200+', label: 'Omega Fatty Acids', icon: '🧬' },
-  { value: '10x', label: 'More Vitamin C than Oranges', icon: '🍊' },
-  { value: '190+', label: 'Bioactive Compounds', icon: '🔬' },
-  { value: '100%', label: 'Natural Ingredients', icon: '🌿' },
+  { value: '200+', label: 'Omega Fatty Acids', icon: '' },
+  { value: '10x', label: 'More Vitamin C than Oranges', icon: '' },
+  { value: '190+', label: 'Bioactive Compounds', icon: '' },
+  { value: '99%', label: 'Natural Ingredients', icon: '' },
 ];
 
 function Benefits() {
@@ -133,7 +133,7 @@ function Benefits() {
                   <span className="ml-2 font-semibold text-foreground">5.0</span>
                 </div>
                 <h3 className="font-serif font-semibold text-xl text-foreground mb-1">
-                  Trusted by 50,000+ Customers
+                  Trusted by 5000+ Customers
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   Join the seabuckthorn skincare revolution

@@ -8,7 +8,7 @@ const contactInfo = [
     icon: Mail, 
     label: 'Email Us', 
     value: 'info@seabuckthorn.com',
-    link: 'mailto:info@seabuckthorn.com'
+    link: 'mailto:mumtazkakakhail@gmail.com'
   },
   { 
     icon: Phone, 
@@ -19,13 +19,13 @@ const contactInfo = [
   { 
     icon: MapPin, 
     label: 'Visit Us', 
-    value: 'Lahore, Pakistan',
+    value: 'Gilgit, Pakistan',
     link: null
   },
   { 
     icon: Clock, 
     label: 'Working Hours', 
-    value: 'Mon - Sat: 9AM - 6PM',
+    value: 'Mon - Sat: 9AM - 5PM',
     link: null
   },
 ];

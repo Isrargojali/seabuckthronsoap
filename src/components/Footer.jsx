@@ -1,5 +1,6 @@
 import { Leaf, Heart, ArrowUp, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logo from "@/assets/sea-buckethorn-removebg-preview.png";
 
 const quickLinks = [
   { label: 'About Us', href: '#about' },
@@ -56,19 +57,16 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <a href="#home" className="flex items-center gap-2.5 mb-5">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <Leaf className="w-5 h-5 text-primary-foreground" />
-              </div>
-              <div>
-                <span className="font-serif text-lg font-semibold text-background block leading-tight">
-                  Seabuckthorn
-                </span>
-                <span className="text-[9px] text-background/60 tracking-widest uppercase leading-none">
-                  Natural Soap Co.
-                </span>
-              </div>
-            </a>
+             <a 
+            href="#home" 
+            className="flex items-center gap-3 group transform transition-transform duration-300 hover:scale-105 active:scale-95"
+          >
+            <img
+              src={logo}
+              alt="Seabuckthorn Soap Logo"
+              className="h-12 w-auto object-contain"
+            />
+          </a>
             <p className="text-background/60 text-sm leading-relaxed mb-5">
               Crafting premium organic soaps with the ancient power of seabuckthorn berries.
             </p>
@@ -159,7 +157,7 @@ function Footer() {
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-primary mt-0.5" />
                 <span className="text-background/60 text-sm">
-                  Lahore, Pakistan
+                  Gilgit, Pakistan
                 </span>
               </li>
             </ul>
@@ -173,7 +171,7 @@ function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">
             <p className="text-background/60 text-xs text-center md:text-left">
               © {currentYear} Seabuckthorn Soap Co. Made with{' '}
-              <Heart className="w-3.5 h-3.5 inline-block text-primary fill-primary" /> for your skin.
+              <Heart className="w-3.5 h-3.5 inline-block " /> for your skin.
             </p>
             <button
               onClick={scrollToTop}

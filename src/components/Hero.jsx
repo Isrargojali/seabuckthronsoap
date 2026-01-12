@@ -43,10 +43,9 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-foreground"
             >
-              Nature's{" "}
-              <span className="text-primary">Golden Touch</span>
+              <span className="text-primary">Seabuckthorn Soap</span>
               <br />
-              for Your Skin
+              Natural Skincare for Sensitive & Dry Skin
             </motion.h1>
 
             {/* Description */}
@@ -56,9 +55,9 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 leading-relaxed"
             >
-              Experience the ancient power of Seabuckthorn berries in our
-              handcrafted, organic soap bars. Transform your daily routine into
-              a <span className="text-foreground font-medium">luxurious spa experience</span>.
+              Handcrafted with certified organic seabuckthorn berries
+              using cold-press methods. Experience the ancient healing power
+              that transforms skin in just 30 days.
             </motion.p>
 
             {/* CTAs */}

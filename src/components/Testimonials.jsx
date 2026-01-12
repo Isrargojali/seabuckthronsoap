@@ -43,7 +43,7 @@ const testimonials = [
     name: "Fatima Ahmed", 
     avatar: "FA", 
     role: "Verified Buyer",
-    location: "Faisalabad",
+    location: "Gilgit",
     stars: 5, 
     text: "The herbal calm variant is perfect for my sensitive skin. No irritation, just pure nourishment.",
     date: "2 months ago"
@@ -200,10 +200,10 @@ function Testimonials() {
           transition={{ delay: 0.3 }}
         >
           {[
-            { value: "10K+", label: "Happy Customers" },
-            { value: "100%", label: "Satisfaction" },
-            { value: "5.0★", label: "Average Rating" },
-            { value: "50+", label: "Cities Shipped" },
+            { value: "5K+", label: "Happy Customers" },
+            { value: "97%", label: "Satisfaction" },
+            { value: "4.5★", label: "Average Rating" },
+            { value: "10+", label: "Cities Shipped" },
           ].map((stat, idx) => (
             <div 
               key={idx}
