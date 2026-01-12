@@ -30,17 +30,17 @@ const steps = [
 ];
 
 const beforeItems = [
-  { text: 'Dry, dull skin', icon: '😔' },
-  { text: 'Visible signs of aging', icon: '😟' },
-  { text: 'Lack of natural glow', icon: '😐' },
-  { text: 'Rough texture', icon: '🙁' },
+  { text: 'Dry, dull skin', icon: '' },
+  { text: 'Visible signs of aging', icon: '' },
+  { text: 'Lack of natural glow', icon: '' },
+  { text: 'Rough texture', icon: '' },
 ];
 
 const afterItems = [
-  { text: 'Deeply moisturized', icon: '💧' },
-  { text: 'Youthful radiance', icon: '✨' },
-  { text: 'Natural healthy glow', icon: '🌟' },
-  { text: 'Silky smooth texture', icon: '💛' },
+  { text: 'Deeply moisturized', icon: '' },
+  { text: 'Youthful radiance', icon: '' },
+  { text: 'Natural healthy glow', icon: '' },
+  { text: 'Silky smooth texture', icon: '' },
 ];
 
 function Experience() {

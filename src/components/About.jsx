@@ -4,10 +4,10 @@ import { Sparkles, Heart, Globe, Award, CheckCircle2 } from "lucide-react";
 import aboutImage from "@/assets/about-seabuckthorn.jpg";
 
 const stats = [
-  { value: "100+", label: "Years of Tradition", icon: "🏛️" },
-  { value: "100%", label: "Organic Ingredients", icon: "🌿" },
-  { value: "5K+", label: "Happy Customers", icon: "💛" },
-  { value: "Zero", label: "Harmful Chemicals", icon: "✨" },
+  { value: "100+", label: "Years of Tradition", icon: "" },
+  { value: "100%", label: "Organic Ingredients", icon: "" },
+  { value: "5K+", label: "Happy Customers", icon: "" },
+  { value: "Zero", label: "Harmful Chemicals", icon: "" },
 ];
 
 const features = [
