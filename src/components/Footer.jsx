@@ -1,6 +1,6 @@
 import { Leaf, Heart, ArrowUp, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import logo from "@/assets/sea-buckethorn-removebg-preview.png";
+import logo from "@/assets/sea-buckethorn.jpeg";
 
 const quickLinks = [
   { label: 'About Us', href: '#about' },
