@@ -6,12 +6,13 @@ import soapCitrus from "@/assets/soap-citrus.jpg";
 import soapHerbal from "@/assets/soap-herbal.jpg";
 import soapMagic from "@/assets/soap-magic.jpg";
 
+//  CONTENT - PRODUCT COLLECTION
 const soaps = [
   { 
     id: 1, 
-    title: "Seabuckthorn Classic", 
+    title: "Seabuckthorn Classic - Best Organic Soap for Radiant Skin", 
     img: soapMagic, 
-    desc: "Our signature blend with pure seabuckthorn oil for radiant, nourished skin.",
+    desc: "Our bestselling signature seabuckthorn soap with pure cold-pressed oil. Rich in 200+ omega fatty acids and vitamin C to deeply moisturize, reduce fine lines, and deliver visibly radiant, youthful-looking skin in 30 days.",
     price: "PKR 350",
     originalPrice: "PKR 450",
     rating: 5,
@@ -20,20 +21,20 @@ const soaps = [
   },
   { 
     id: 2, 
-    title: "Citrus Glow", 
+    title: "Citrus Glow - Energizing Vitamin C Seabuckthorn Soap", 
     img: soapCitrus, 
-    desc: "Energizing citrus blend with orange and lemon extracts for morning freshness.",
+    desc: "Invigorating citrus and lemon extract blend combined with cold-pressed seabuckthorn. Perfect for morning skincare routines. Boosts natural glow, brightens dull skin, and provides energizing aromatherapy benefits.",
     price: "PKR 320",
     originalPrice: "PKR 400",
-    rating: 5,
+    rating: 4,
     reviews: 89,
     badge: "Popular"
   },
   { 
     id: 3, 
-    title: "Herbal Calm", 
+    title: "Herbal Calm - Lavender & Chamomile Healing Seabuckthorn Soap", 
     img: soapHerbal, 
-    desc: "Soothing lavender and chamomile botanical mix for relaxation and healing.",
+    desc: "Soothing lavender and chamomile botanical blend infused with seabuckthorn oil. Ideal for sensitive, irritated, and eczema-prone skin. Calms inflammation, promotes skin healing, and provides relaxation through aromatherapy.",
     price: "PKR 380",
     originalPrice: "PKR 480",
     rating: 5,
@@ -63,7 +64,7 @@ function Collection() {
       <div className="absolute top-0 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
+        {/* Section Header -  */}
         <motion.div 
           className="text-center mb-10 md:mb-14"
           initial={{ opacity: 0, y: 20 }}
@@ -75,10 +76,10 @@ function Collection() {
             Our Collection
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-4">
-            Handcrafted <span className="text-primary">Luxury</span> Soaps
+            Handcrafted <span className="text-primary">Cold-Pressed Organic Soaps</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Each bar is lovingly crafted with premium organic ingredients
+            <span className="font-semibold text-primary">Premium seabuckthorn soaps</span> handcrafted in small batches with 100% natural, USDA-certified organic ingredients. Each bar delivers visible skin transformation—<span className="font-semibold">from radiant glow to deep hydration</span>
           </p>
         </motion.div>
 
@@ -119,7 +120,7 @@ function Collection() {
                   </button>
                 </div>
 
-                {/* Content */}
+                {/* Content -  */}
                 <div className="p-5">
                   {/* Rating */}
                   <div className="flex items-center gap-2 mb-2">
@@ -128,15 +129,15 @@ function Collection() {
                         <Star key={i} className="w-3.5 h-3.5 fill-primary text-primary" />
                       ))}
                     </div>
-                    <span className="text-xs text-muted-foreground">
-                      ({soap.reviews})
+                    <span className="text-xs text-muted-foreground font-medium">
+                      {soap.rating}.0 ({soap.reviews} verified reviews)
                     </span>
                   </div>
 
-                  <h3 className="font-serif font-semibold text-lg text-foreground mb-1 group-hover:text-primary transition-colors">
+                  <h3 className="font-serif font-semibold text-lg text-foreground mb-1 group-hover:text-primary transition-colors line-clamp-2">
                     {soap.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                  <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
                     {soap.desc}
                   </p>
 
@@ -145,6 +146,7 @@ function Collection() {
                     <div className="flex items-baseline gap-2">
                       <span className="text-xl font-bold text-primary">{soap.price}</span>
                       <span className="text-xs text-muted-foreground line-through">{soap.originalPrice}</span>
+                      <span className="text-xs font-semibold text-accent ml-1">Save 22%</span>
                     </div>
                     <Button variant="default" size="sm" className="gap-1.5">
                       <ShoppingBag className="w-3.5 h-3.5" />
@@ -165,8 +167,8 @@ function Collection() {
           transition={{ delay: 0.4 }}
         >
           <Button variant="outline" size="lg" className="gap-2">
-            <Sparkles className="w-4 h-4" />
-            View All Products
+            {/* <Sparkles className="w-4 h-4" /> */}
+            Explore All Seabuckthorn Soap Products
           </Button>
         </motion.div>
       </div>
