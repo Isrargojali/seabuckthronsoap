@@ -36,12 +36,27 @@ const Navbar = () => {
   }, []);
 
   const handleNavClick = (href) => {
-    setMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  setMenuOpen(false);
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (!element) return;
+
+      const headerOffset = 90;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }, 50);
+  });
+};
+
+
+
 
   return (
     <motion.header

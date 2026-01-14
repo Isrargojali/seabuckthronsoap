@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Leaf, Droplets, Palette, Sparkles, Check, X, Timer } from 'lucide-react';
 
-// ✅ OPTIMIZED CONTENT - PROCESS STEPS
+// CONTENT - PROCESS STEPS
 const steps = [
   { 
     icon: Leaf, 
@@ -30,7 +30,7 @@ const steps = [
   },
 ];
 
-// ✅ OPTIMIZED CONTENT - BEFORE ITEMS
+// CONTENT - BEFORE ITEMS
 const beforeItems = [
   { text: 'Dry, dull, and dehydrated skin', icon: '' },
   { text: 'Visible signs of aging and fine lines', icon: '' },
@@ -38,7 +38,7 @@ const beforeItems = [
   { text: 'Rough, uneven, and tired texture', icon: '' },
 ];
 
-// ✅ OPTIMIZED CONTENT - AFTER ITEMS
+// CONTENT - AFTER ITEMS
 const afterItems = [
   { text: 'Deeply moisturized and hydrated skin', icon: '' },
   { text: 'Youthful radiance and improved elasticity', icon: '' },
@@ -60,7 +60,7 @@ function Experience() {
       <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -translate-x-1/2" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header - ✅ OPTIMIZED */}
+        {/* Section Header - */}
         <motion.div 
           className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -114,7 +114,7 @@ function Experience() {
           })}
         </div>
 
-        {/* Before & After Comparison - ✅ OPTIMIZED */}
+        {/* Before & After Comparison - */}
         <motion.div 
           className="max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
