@@ -8,10 +8,10 @@ import soapMagic from "@/assets/soap-magic.jpg";
 
 //  CONTENT - PRODUCT COLLECTION
 const soaps = [
-  { 
-    id: 1, 
-    title: "Seabuckthorn Classic - Best Organic Soap for Radiant Skin", 
-    img: soapMagic, 
+  {
+    id: 1,
+    title: "Seabuckthorn Classic - Best Organic Soap for Radiant Skin",
+    img: soapMagic,
     desc: "Our bestselling signature seabuckthorn soap with pure cold-pressed oil. Rich in 200+ omega fatty acids and vitamin C to deeply moisturize, reduce fine lines, and deliver visibly radiant, youthful-looking skin in 30 days.",
     price: "PKR 350",
     originalPrice: "PKR 450",
@@ -19,10 +19,10 @@ const soaps = [
     reviews: 128,
     badge: "Bestseller"
   },
-  { 
-    id: 2, 
-    title: "Citrus Glow - Energizing Vitamin C Seabuckthorn Soap", 
-    img: soapCitrus, 
+  {
+    id: 2,
+    title: "Citrus Glow - Energizing Vitamin C Seabuckthorn Soap",
+    img: soapCitrus,
     desc: "Invigorating citrus and lemon extract blend combined with cold-pressed seabuckthorn. Perfect for morning skincare routines. Boosts natural glow, brightens dull skin, and provides energizing aromatherapy benefits.",
     price: "PKR 320",
     originalPrice: "PKR 400",
@@ -30,10 +30,10 @@ const soaps = [
     reviews: 89,
     badge: "Popular"
   },
-  { 
-    id: 3, 
-    title: "Herbal Calm - Lavender & Chamomile Healing Seabuckthorn Soap", 
-    img: soapHerbal, 
+  {
+    id: 3,
+    title: "Herbal Calm - Lavender & Chamomile Healing Seabuckthorn Soap",
+    img: soapHerbal,
     desc: "Soothing lavender and chamomile botanical blend infused with seabuckthorn oil. Ideal for sensitive, irritated, and eczema-prone skin. Calms inflammation, promotes skin healing, and provides relaxation through aromatherapy.",
     price: "PKR 380",
     originalPrice: "PKR 480",
@@ -49,14 +49,14 @@ function Collection() {
   const [likedIds, setLikedIds] = useState([]);
 
   const toggleLike = (id) => {
-    setLikedIds(prev => 
+    setLikedIds(prev =>
       prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
     );
   };
 
   return (
-    <section 
-      id="collection" 
+    <section
+      id="collection"
       ref={sectionRef}
       className="py-16 md:py-24 bg-muted/30 relative overflow-hidden"
     >
@@ -65,7 +65,7 @@ function Collection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header -  */}
-        <motion.div 
+        <motion.div
           className="text-center mb-10 md:mb-14"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -86,7 +86,7 @@ function Collection() {
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {soaps.map((soap, index) => (
-            <motion.article 
+            <motion.article
               key={soap.id}
               className="group"
               initial={{ opacity: 0, y: 30 }}
@@ -96,9 +96,9 @@ function Collection() {
               <div className="bg-card rounded-2xl overflow-hidden border border-border/30 hover:border-primary/20 hover:shadow-card transition-all duration-300">
                 {/* Image Container */}
                 <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-cream-warm to-golden-light/20">
-                  <img 
-                    src={soap.img} 
-                    alt={soap.title} 
+                  <img
+                    src={soap.img}
+                    alt={soap.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
 
@@ -109,11 +109,10 @@ function Collection() {
 
                   {/* Like Button */}
                   <button
-                    className={`absolute top-3 right-3 w-9 h-9 rounded-full flex items-center justify-center shadow-soft transition-all duration-200 ${
-                      likedIds.includes(soap.id) 
-                        ? 'bg-primary text-primary-foreground' 
+                    className={`absolute top-3 right-3 w-9 h-9 rounded-full flex items-center justify-center shadow-soft transition-all duration-200 ${likedIds.includes(soap.id)
+                        ? 'bg-primary text-primary-foreground'
                         : 'bg-card/90 text-foreground hover:bg-primary hover:text-primary-foreground'
-                    }`}
+                      }`}
                     onClick={() => toggleLike(soap.id)}
                   >
                     <Heart className={`w-4 h-4 ${likedIds.includes(soap.id) ? 'fill-current' : ''}`} />
@@ -160,7 +159,7 @@ function Collection() {
         </div>
 
         {/* View All CTA */}
-        <motion.div 
+        <motion.div
           className="text-center mt-10 md:mt-12"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
