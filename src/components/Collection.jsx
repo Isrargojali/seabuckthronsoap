@@ -1,175 +1,229 @@
-import { useRef, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { ShoppingBag, Heart, Star, Sparkles } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import soapCitrus from "@/assets/soap-citrus.jpg";
-import soapHerbal from "@/assets/soap-herbal.jpg";
-import soapMagic from "@/assets/soap-magic.jpg";
+import { useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { ShoppingBag, Heart, Star, ZoomIn } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-//  CONTENT - PRODUCT COLLECTION
-const soaps = [
-  {
-    id: 1,
-    title: "Seabuckthorn Classic - Best Organic Soap for Radiant Skin",
-    img: soapMagic,
-    desc: "Our bestselling signature seabuckthorn soap with pure cold-pressed oil. Rich in 200+ omega fatty acids and vitamin C to deeply moisturize, reduce fine lines, and deliver visibly radiant, youthful-looking skin in 30 days.",
-    price: "PKR 350",
-    originalPrice: "PKR 450",
-    rating: 5,
-    reviews: 128,
-    badge: "Bestseller"
+import soapImage1 from "@/assets/sea1.jpg";
+import soapImage2 from "@/assets/sea2.jpg";
+import soapImage3 from "@/assets/sea3.jpg";
+
+const product = {
+  id: 1,
+  name: "Seabuckthorn Soap - Premium Cold-Pressed Organic Bar",
+  shortDescription:
+    "100% organic cold-pressed seabuckthorn soap. Handcrafted in small batches for visible skin transformation, deep hydration, and anti-aging benefits.",
+  rating: 4.8,
+  reviews: 373,
+  images: [
+    { src: soapImage1, alt: "Front view", angle: "Front View" },
+    { src: soapImage3, alt: "Side view", angle: "Side Angle" },
+    { src: soapImage2, alt: "Top view", angle: "Top View" },
+  ],
+  benefits: [
+    "Deep hydration with 200+ omega fatty acids",
+    "Anti-aging power with high vitamin C",
+    "Safe for sensitive and eczema-prone skin",
+    "100% organic & chemical-free",
+    "Cold-pressed to preserve nutrients",
+    "Eco-friendly & cruelty-free",
+  ],
+  keyFeatures: [
+    "✓ Handcrafted in small batches",
+    "✓ Dermatologist-tested & approved",
+    "✓ Free shipping",
+    "✓ 30-day transformation guarantee",
+  ],
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
   },
-  {
-    id: 2,
-    title: "Citrus Glow - Energizing Vitamin C Seabuckthorn Soap",
-    img: soapCitrus,
-    desc: "Invigorating citrus and lemon extract blend combined with cold-pressed seabuckthorn. Perfect for morning skincare routines. Boosts natural glow, brightens dull skin, and provides energizing aromatherapy benefits.",
-    price: "PKR 320",
-    originalPrice: "PKR 400",
-    rating: 4,
-    reviews: 89,
-    badge: "Popular"
-  },
-  {
-    id: 3,
-    title: "Herbal Calm - Lavender & Chamomile Healing Seabuckthorn Soap",
-    img: soapHerbal,
-    desc: "Soothing lavender and chamomile botanical blend infused with seabuckthorn oil. Ideal for sensitive, irritated, and eczema-prone skin. Calms inflammation, promotes skin healing, and provides relaxation through aromatherapy.",
-    price: "PKR 380",
-    originalPrice: "PKR 480",
-    rating: 5,
-    reviews: 156,
-    badge: "New"
-  }
-];
+};
 
 function Collection() {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
-  const [likedIds, setLikedIds] = useState([]);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
-  const toggleLike = (id) => {
-    setLikedIds(prev =>
-      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
-    );
-  };
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [isLiked, setIsLiked] = useState(false);
 
   return (
     <section
       id="collection"
       ref={sectionRef}
-      className="py-16 md:py-24 bg-muted/30 relative overflow-hidden"
+      className="py-14 sm:py-20 lg:py-28 bg-muted/30 overflow-hidden"
     >
-      {/* Subtle background */}
-      <div className="absolute top-0 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header -  */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <motion.div
-          className="text-center mb-10 md:mb-14"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
+          variants={fadeUp}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="text-center mb-12 sm:mb-16"
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
             <ShoppingBag className="w-4 h-4" />
-            Our Collection
+            Our Premium Collection
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-4">
-            Handcrafted <span className="text-primary">Cold-Pressed Organic Soaps</span>
+
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif font-bold">
+            <span className="text-primary">Seabuckthorn Soap</span>
           </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            <span className="font-semibold text-primary">Premium seabuckthorn soaps</span> handcrafted in small batches with 100% natural, USDA-certified organic ingredients. Each bar delivers visible skin transformation—<span className="font-semibold">from radiant glow to deep hydration</span>
+
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+            Certified organic, cold-pressed soap trusted by thousands for real,
+            visible results.
           </p>
         </motion.div>
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {soaps.map((soap, index) => (
-            <motion.article
-              key={soap.id}
-              className="group"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1 + index * 0.1, duration: 0.4 }}
+        {/* Content */}
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14">
+          {/* LEFT */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="space-y-4 sm:space-y-6"
+          >
+            {/* Main Image */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 180, damping: 18 }}
+              className="relative aspect-square rounded-2xl overflow-hidden bg-card shadow-card"
             >
-              <div className="bg-card rounded-2xl overflow-hidden border border-border/30 hover:border-primary/20 hover:shadow-card transition-all duration-300">
-                {/* Image Container */}
-                <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-cream-warm to-golden-light/20">
-                  <img
-                    src={soap.img}
-                    alt={soap.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+              <img
+                src={product.images[activeImageIndex].src}
+                alt={product.images[activeImageIndex].alt}
+                className="w-full h-full object-cover"
+              />
 
-                  {/* Badge */}
-                  <div className="absolute top-3 left-3 bg-primary text-primary-foreground px-2.5 py-1 rounded-full text-xs font-semibold shadow-soft">
-                    {soap.badge}
-                  </div>
+              {/* Like */}
+              <motion.button
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setIsLiked(!isLiked)}
+                className={`absolute top-3 right-3 w-10 h-10 rounded-full flex items-center justify-center backdrop-blur shadow-soft transition ${
+                  isLiked
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-white/90 hover:bg-primary hover:text-white"
+                }`}
+              >
+                <Heart className={`w-5 h-5 ${isLiked ? "fill-current" : ""}`} />
+              </motion.button>
 
-                  {/* Like Button */}
-                  <button
-                    className={`absolute top-3 right-3 w-9 h-9 rounded-full flex items-center justify-center shadow-soft transition-all duration-200 ${likedIds.includes(soap.id)
-                        ? 'bg-primary text-primary-foreground'
-                        : 'bg-card/90 text-foreground hover:bg-primary hover:text-primary-foreground'
-                      }`}
-                    onClick={() => toggleLike(soap.id)}
-                  >
-                    <Heart className={`w-4 h-4 ${likedIds.includes(soap.id) ? 'fill-current' : ''}`} />
-                  </button>
-                </div>
-
-                {/* Content -  */}
-                <div className="p-5">
-                  {/* Rating */}
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="flex items-center">
-                      {[...Array(soap.rating)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-primary text-primary" />
-                      ))}
-                    </div>
-                    <span className="text-xs text-muted-foreground font-medium">
-                      {soap.rating}.0 ({soap.reviews} verified reviews)
-                    </span>
-                  </div>
-
-                  <h3 className="font-serif font-semibold text-lg text-foreground mb-1 group-hover:text-primary transition-colors line-clamp-2">
-                    {soap.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                    {soap.desc}
-                  </p>
-
-                  {/* Price & Action */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-xl font-bold text-primary">{soap.price}</span>
-                      <span className="text-xs text-muted-foreground line-through">{soap.originalPrice}</span>
-                      <span className="text-xs font-semibold text-accent ml-1">Save 22%</span>
-                    </div>
-                    <Button variant="default" size="sm" className="gap-1.5">
-                      <ShoppingBag className="w-3.5 h-3.5" />
-                      Add
-                    </Button>
-                  </div>
-                </div>
+              {/* Zoom */}
+              <div className="absolute bottom-3 left-3 bg-white/90 px-3 py-1.5 rounded-lg flex items-center gap-2 text-xs font-medium">
+                <ZoomIn className="w-4 h-4" />
+                View Angles
               </div>
-            </motion.article>
-          ))}
-        </div>
+            </motion.div>
 
-        {/* View All CTA */}
-        <motion.div
-          className="text-center mt-10 md:mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.4 }}
-        >
-          <Button variant="outline" size="lg" className="gap-2">
-            {/* <Sparkles className="w-4 h-4" /> */}
-            Explore All Seabuckthorn Soap Products
-          </Button>
-        </motion.div>
+            {/* Thumbnails */}
+            <div className="grid grid-cols-3 gap-3">
+              {product.images.map((img, i) => (
+                <motion.button
+                  key={i}
+                  onClick={() => setActiveImageIndex(i)}
+                  whileHover={{ scale: 1.06 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`aspect-square rounded-lg overflow-hidden border-2 transition ${
+                    activeImageIndex === i
+                      ? "border-primary"
+                      : "border-border/40"
+                  }`}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.angle}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.button>
+              ))}
+            </div>
+
+            {/* Trust Badges */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+              {[
+                { v: "5K+", l: "Customers" },
+                { v: "97%", l: "Satisfaction" },
+                { v: "30", l: "Day Guarantee" },
+                { v: "4.8★", l: "Rating" },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ y: -4 }}
+                  className="p-3 text-center rounded-xl bg-card border shadow-soft"
+                >
+                  <p className="text-lg font-bold text-primary">{item.v}</p>
+                  <p className="text-xs text-muted-foreground">{item.l}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* RIGHT */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="space-y-6"
+          >
+            <h3 className="text-2xl sm:text-3xl font-serif font-bold">
+              {product.name}
+            </h3>
+
+            {/* Rating */}
+            <div className="flex items-center gap-2">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+              ))}
+              <span className="text-sm font-medium">
+                {product.rating} ({product.reviews})
+              </span>
+            </div>
+
+            <p className="text-muted-foreground">
+              {product.shortDescription}
+            </p>
+
+            {/* Features */}
+            <div className="grid sm:grid-cols-2 gap-2 bg-primary/5 p-4 rounded-xl">
+              {product.keyFeatures.map((f, i) => (
+                <p key={i} className="text-sm font-medium">
+                  {f}
+                </p>
+              ))}
+            </div>
+
+            {/* Benefits */}
+            <ul className="space-y-2">
+              {product.benefits.map((b, i) => (
+                <motion.li
+                  key={i}
+                  whileHover={{ x: 6 }}
+                  className="flex gap-3 p-3 bg-card rounded-lg border"
+                >
+                  <span className="text-primary font-bold">→</span>
+                  <span className="text-sm text-muted-foreground">{b}</span>
+                </motion.li>
+              ))}
+            </ul>
+
+            {/* CTA */}
+            <div className="flex flex-col sm:flex-row gap-3 pt-4">
+              <Button size="lg" className="flex-1 gap-2">
+                <ShoppingBag className="w-5 h-5" />
+                Add to Cart
+              </Button>
+              <Button variant="outline" size="lg" className="flex-1">
+                View Details
+              </Button>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
