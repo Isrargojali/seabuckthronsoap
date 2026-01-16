@@ -144,14 +144,14 @@ function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2.5">
                 <Mail className="w-4 h-4 text-primary mt-0.5" />
-                <a href="mailto:info@seabuckthorn.com" className="text-background/60 hover:text-primary transition-colors text-sm">
-                  info@seabuckthorn.com
+                <a href="mailto:contact@seabuckthronsoap.com" className="text-background/60 hover:text-primary transition-colors text-sm">
+                  contact@seabuckthronsoap.com
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-primary mt-0.5" />
-                <a href="tel:+923432217919" className="text-background/60 hover:text-primary transition-colors text-sm">
-                  +92 343 2217919
+                <a href="tel:+92 355 4364192" className="text-background/60 hover:text-primary transition-colors text-sm">
+                  +92 355 4364192
                 </a>
               </li>
               <li className="flex items-start gap-2.5">

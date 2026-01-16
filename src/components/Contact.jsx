@@ -8,14 +8,14 @@ const contactInfo = [
   { 
     icon: Mail, 
     label: 'Email Us - Product Questions & Support', 
-    value: 'info@seabuckthorn.com',
-    link: 'mailto:mumtazkakakhail@gmail.com'
+    value: 'contact@seabuckthronsoap.com',
+    link: 'mailto:contact@seabuckthronsoap.com'
   },
   { 
     icon: Phone, 
     label: 'Call Us - WhatsApp & Phone Support', 
-    value: '+92 343 2217919',
-    link: 'tel:+923432217919'
+    value: '+92 355 4364192',
+    link: 'tel:+92 355 4364192'
   },
   { 
     icon: MapPin, 
@@ -210,7 +210,7 @@ function Contact() {
               </div>
             </div>
 
-            {/* Trust & Support - ✅ NEW SECTION */}
+            {/* Trust & Support - */}
             <div className="bg-card rounded-2xl p-6 border border-border/30">
               <h4 className="font-semibold text-foreground mb-4">Why Contact Us?</h4>
               <ul className="space-y-2.5 text-sm text-muted-foreground">
@@ -261,7 +261,7 @@ function Contact() {
                   </svg>
                 </a>
                 <a 
-                  href="https://wa.me/923432217919" 
+                  href="https://wa.me/+92 355 4364192" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-muted/50 hover:bg-primary rounded-xl flex items-center justify-center group transition-all duration-200"
