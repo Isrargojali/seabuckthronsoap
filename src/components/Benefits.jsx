@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Leaf, Droplets, Zap, Globe, Shield, Heart, Sun, Recycle, Award, Star } from 'lucide-react';
 
-// ✅ OPTIMIZED CONTENT - PRIMARY BENEFITS
+// PRIMARY BENEFITS
 const primaryBenefits = [
   { 
     icon: Leaf, 
@@ -34,7 +34,7 @@ const primaryBenefits = [
   },
 ];
 
-// ✅ OPTIMIZED CONTENT - TRUST BADGES
+// TRUST BADGES
 const trustBadges = [
   { icon: Shield, label: 'Dermatologist Tested & Approved' },
   { icon: Heart, label: '100% Cruelty-Free' },
@@ -42,7 +42,7 @@ const trustBadges = [
   { icon: Recycle, label: 'Zero Waste Certified' },
 ];
 
-// ✅ OPTIMIZED CONTENT - SCIENTIFIC STATS
+// SCIENTIFIC STATS
 const scientificStats = [
   { value: '200+', label: 'Omega Fatty Acids (3, 6, 7, 9)', icon: '' },
   { value: '10x', label: 'More Vitamin C than Oranges', icon: '' },
@@ -64,7 +64,7 @@ function Benefits() {
       <div className="absolute top-20 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header - ✅ OPTIMIZED */}
+        {/* Section Header */}
         <motion.div 
           className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -119,7 +119,7 @@ function Benefits() {
           })}
         </div>
 
-        {/* Trust Badges Bar - ✅ OPTIMIZED */}
+        {/* Trust Badges Bar */}
         <motion.div 
           className="mb-12 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -163,7 +163,7 @@ function Benefits() {
           </div>
         </motion.div>
 
-        {/* Scientific Stats - ✅ OPTIMIZED */}
+        {/* Scientific Stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
