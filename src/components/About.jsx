@@ -45,7 +45,7 @@ const About = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header  */}
-        <motion.div 
+        <motion.div
           className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -82,7 +82,7 @@ const About = () => {
             </div>
 
             {/* Certification badge  */}
-            <motion.div 
+            <motion.div
               className="absolute -bottom-4 -right-4 md:bottom-4 md:right-4"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -116,7 +116,7 @@ const About = () => {
           >
             <div className="space-y-4">
               <p className="text-muted-foreground leading-relaxed">
-                At <span className="font-semibold text-primary">Seabuckthorn Soap Co.</span>, 
+                At <span className="font-semibold text-primary">Seabuckthorn Soap Co.</span>,
                 we harness the <span className="font-semibold">natural benefits of the powerful seabuckthorn superfruit</span>—valued for over 1,000 years in ancient healing traditions for its <span className="font-semibold">healing, nourishing, and skin-rejuvenating properties</span>.
               </p>
 
