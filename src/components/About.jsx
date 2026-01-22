@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { Sparkles, Heart, Globe, Award, CheckCircle2 } from "lucide-react";
 import aboutImage from "@/assets/about-seabuckthorn.jpg";
 
-// ✅ OPTIMIZED CONTENT - STATS ARRAY
+// - STATS ARRAY
 const stats = [
   { value: "1000+", label: "Years of Ancient Healing Heritage", icon: "" },
   { value: "99.9%", label: "Certified Organic Ingredients", icon: "" },
@@ -11,7 +11,7 @@ const stats = [
   { value: "Zero", label: "Harsh Chemicals or Sulfates", icon: "" },
 ];
 
-// ✅ OPTIMIZED CONTENT - FEATURES ARRAY
+// - FEATURES ARRAY
 const features = [
   {
     icon: Sparkles,
@@ -44,7 +44,7 @@ const About = () => {
       <div className="absolute top-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -translate-y-1/2" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header - ✅ OPTIMIZED */}
+        {/* Section Header  */}
         <motion.div 
           className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -81,7 +81,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent" />
             </div>
 
-            {/* Certification badge - ✅ OPTIMIZED */}
+            {/* Certification badge  */}
             <motion.div 
               className="absolute -bottom-4 -right-4 md:bottom-4 md:right-4"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -107,7 +107,7 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Content Side - ✅ OPTIMIZED */}
+          {/* Content Side  */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -158,7 +158,7 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* Stats Section - ✅ OPTIMIZED */}
+        {/* Stats Section  */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
