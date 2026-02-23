@@ -112,9 +112,9 @@ const Hero = () => {
                     ))}
                     <span className="ml-1.5 text-sm font-semibold text-foreground">4.5</span>
                   </div>
-                  {/* <p className="text-xs text-muted-foreground">
+                  <p className="text-xs text-muted-foreground">
                     <span className="font-medium text-foreground">5000+</span> Happy Customers
-                  </p> */}
+                  </p>
                 </div>
               </div>
             </motion.div>
